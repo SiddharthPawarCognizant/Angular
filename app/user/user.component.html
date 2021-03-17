@@ -1,0 +1,99 @@
+<htmL>
+    <head>
+  <style>
+    body{
+      margin: 0px;
+  }
+  nav{
+      background-color: #005b96;
+      color: #ffffff;
+      display: flex;
+      height: 60px;
+  }
+  .start{
+      width: 50%;
+      margin: auto;
+      font-family: inherit;
+      display: flex;
+  }
+  .start a{
+      color: white;
+      float: right;
+      font-size: 1em;
+      margin-left: 300px;
+      padding-right: 10px
+
+  }
+  .start p{
+      font-size: 24px;
+      padding-left: 10px;
+      margin: 0px;
+      padding-top: 10px;
+      padding-right: 20px
+  }
+  </style>
+  
+    </head>
+  
+  
+  
+    <body> 
+      <div id="section1">
+        <header>
+            <nav>
+                <div class="start">
+                    <p>
+                      Angular Learning
+                    </p>
+                </div>
+                <div class="start">
+                    <!-- <a href="viewEmp"><span>View Employee</span></a>
+                    <a href="list"><span>Employees</span></a>
+                    <a href="editEmp"><span>Edit Employee</span></a>
+                    <a href="EETD"><span>Edit Employee-Template</span></a>
+                    <a href="QI"><span>Quantity Increment</span></a>
+                    <a href="login"><span>Login</span></a>
+                    <a href="list"><span>List</span></a> -->
+                </div>
+            </nav>
+        </header>
+    </div>
+
+
+
+
+<!--------------------------------------------------------------------------->
+<br>    
+<input class="btn btn-success" type="button" value="Get Users" id="get-users" (click)="GetUser()">
+<input class="btn btn-success" type="button" value="Post Users" id="post-users" (click)="PostUser()">
+<input class="btn btn-success" type="button" value="Error" id="Error" (click)="ErrorHandling()">
+<p>{{errorMessage}}</p>
+
+<table>
+  <tr *ngFor="let user of users">
+    <td><img src="{{user.avatar}}"></td>
+    <td>
+      {{user.first_name}}, {{user.last_name}}<br>
+      {{user.email}}<br>
+      <input class="btn btn-success" type="button" value="Delete Users" id="Delete-users" (click)="Delete(user)">
+      <input class="btn btn-success" type="button" value="Update Users" id="Update-users" (click)="Update(user)">
+    </td>
+  </tr>
+
+  <tr *ngFor="let user of user">
+    <td><img src="{{user.avatar}}"></td>
+    <td>
+      {{user.first_name}}, {{user.last_name}}<br>
+      {{user.email}}<br>
+      <input class="btn btn-success" type="button" value="Delete Users" id="Delete-users" (click)="Delete(user)">
+      <input class="btn btn-success" type="button" value="Update Users" id="Update-users" (click)="Update(user)">
+    </td>
+  </tr>
+</table>
+<br><br>
+<!------------------------------------------------------------------------------->
+<!-- <h4>Post Call</h4>
+<input class="form-control" type="text"  [(ngModel)]="name" placeholder="Type"/>
+<button class="btn btn-success" (click)="PostUser()">Post Data</button> 
+<button class="btn btn-success" (click)="PutUser()">Put Data</button>  -->
+ <!-- <p>This is post call={{result}}</p> -->

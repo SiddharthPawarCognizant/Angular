@@ -1,0 +1,64 @@
+
+<html>
+
+    <head>
+    
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale"> -->
+    </head>
+        <body>
+         
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+            <a class="navbar-brand" >Movie Cruiser <i class='fas fa-film' style='font-size: 45px'></i></a>
+             
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="fav">Favourites</a></li>
+                    <li class="nav-item"><a class="nav-link" >Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+            <!------------------------------------------------------------>
+    <div class="container">
+        <div class="table">
+    <h1>Movie List</h1>
+     <table class="table table-dark table_hover table-bordered">
+      <tr>
+        <th id="id">Id</th>
+        <th id="title">Title</th>
+        <th id="box-office">Box office</th>
+        <!-- <th id="isActive">Active</th> -->
+        <!-- <th id="date_of_launch">date_of_launch</th> -->
+        <th id="genre">Genre</th>
+        <th id="has-teaser">Has Teaser</th>
+        <th id="action">Action</th>
+      </tr>
+    
+       <tr *ngFor="let movie of movies">
+        <td><label for="id"> {{movie.id}} </label></td>
+        <td><label for="title"> {{movie.title}} </label></td> 
+        <td><label for ="box-office">${{movie.boxOffice}}</label></td>
+        <!-- <td><label for="isActive">{{movie.isActive}}</label></td> -->
+        <!-- <td> <label for="date_of_launch">{{movie.date_of_launch}} </label></td> -->
+        <td><label for="genre"> {{movie.genre}} </label></td>
+        <td><label for="has-teaser"> {{movie.hasTeaser}} </label></td>
+        <td><button (click)="addToFavorites(movie.id)" class="btn btn-primary"><a>Add To Favourites</a></button></td>
+
+      </tr>
+    </table>
+    </div>
+    </div>
+    
+    
+    <div id="footer">
+        <footer>
+            <span>Copyright &#169; 2019</span>
+        </footer>
+    </div>
+    
+    
+    

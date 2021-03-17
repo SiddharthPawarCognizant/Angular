@@ -1,0 +1,124 @@
+<htmL>
+  <head>
+<style>
+  body{
+    margin: 0px;
+}
+nav{
+    background-color: #005b96;
+    color: #ffffff;
+    display: flex;
+    height: 60px;
+}
+.start{
+    width: 50%;
+    margin: auto;
+    font-family: inherit;
+    display: flex;
+}
+.start a{
+    color: white;
+    float: right;
+    font-size: 1em;
+    margin-left: 10px;
+    padding-right: 20px
+
+}
+.start p{
+    font-size: 24px;
+    padding-left: 10px;
+    margin: 0px;
+    padding-top: 10px;
+    padding-right: 20px
+}
+</style>
+
+  </head>
+
+
+
+  <body> 
+    <div id="section1">
+      <header>
+          <nav>
+              <div class="start">
+                  <p>
+                    Angular Learning
+                  </p>
+              </div>
+              <div class="start">
+                  <a href="viewEmp"><span>View Employee</span></a>
+                  <a href="list"><span>Employees</span></a>
+                  <a href="editEmp"><span>Edit Employee</span></a>
+                  <a href="EETD"><span>Edit Employee-Template</span></a>
+                  <a href="QI"><span>Quantity Increment</span></a>
+                  <a href="login"><span>Login</span></a>
+
+
+
+
+              </div>
+          </nav>
+      </header>
+  </div>
+    <!------------------------------------------------------------------------------------------------------->
+  <h2>Edit Employee</h2>
+  <h3>Name</h3>
+  <input type="text" name="name" minlength="2" maxlength="10" required name="employee.name" [(ngModel)]="employee.name" #name="ngModel"><span>{{name.value}}</span>
+  <!-- <div>{{name.errors?.minlength | }}</div> -->
+  <div>name.invalid - {{name.invalid}}</div>
+  <div>name.touched - {{name.touched}}</div>
+  <div>name.dirty - {{name.dirty}}</div>
+  <div>name.errors.required - {{name.errors?.required}}</div>
+  <div>name.errors.minlength - {{name.errors?.minlength | json}}</div>
+
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <h3>Name</h3>
+  <input type="text" name="namee" minlength="1" maxlength="10" required  ngModel #namee="ngModel"> 
+   <P class="error" *ngIf="!namee.invalid || namee.touched">Name must be at least 2 characters long</P>
+     
+
+  <!----------------------------------------------------------------------------------------->
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+ 
+  <h2>Edit Employee</h2>
+  <div class="block">
+
+
+  <form  #empForm="ngForm" (ngSubmit)="onSubmit()">
+    <div><b>Name</b><br>
+    <input type="text" name="name" minlength="2" maxlength="10" required   [(ngModel)]="employee.name" #name="ngModel"><span>{{name.value}}</span>
+    </div><br>
+
+  <div><b>Salary</b><br>
+  <input type="text" name="salary"  [(ngModel)]="employee.salary" #salary="ngModel">
+  </div><br>
+
+  <div><b>Is Permanent or not?</b><br>
+    Yes   <input type="radio" name="permanent" id="permanentTrue" [value]="true" [(ngModel)]="employee.permanent">
+    No  <input type="radio" name="permanent" id="permanentFalse" [value]="false" [(ngModel)]="employee.permanent" >
+  </div>
+  
+  <div><b>Department</b><br>
+    <select class="form-control" [ngModel]="employee.department.Id" name='department' (change)='myEmp($event)'>
+      <option  *ngFor="let dept of departments" [value]='dept.Id'>{{dept.name}}</option>
+    </select>
+  </div>
+  <P><button type="submit" value="Submit"  [disabled]="!name.valid" class="btn btn-primary">Save</button></P>
+<!-- <input type="submit" value="Submit"  class="btn btn-primary" [disabled]="!empForm.valid"> -->
+  </form>
+
+
+</div>
+  <div class="block">
+    <strong>Employee Model</strong><br>
+    <pre>{{employee | json }}</pre>
+    </div>  
+
+
+  <div class="block">
+    <strong>Angular Generated Form Model</strong><br>
+    <pre>{{empForm.value | json}}</pre>
+    </div>

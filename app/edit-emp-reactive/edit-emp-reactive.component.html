@@ -1,0 +1,106 @@
+
+<htmL>
+  <head>
+<style>
+  body{
+    margin: 0px;
+}
+nav{
+    background-color: #005b96;
+    color: #ffffff;
+    display: flex;
+    height: 60px;
+}
+.start{
+    width: 50%;
+    margin: auto;
+    font-family: inherit;
+    display: flex;
+}
+.start a{
+    color: white;
+    float: right;
+    font-size: 1em;
+    margin-left: 10px;
+    padding-right: 20px
+
+}
+.start p{
+    font-size: 24px;
+    padding-left: 10px;
+    margin: 0px;
+    padding-top: 10px;
+    padding-right: 20px
+}
+</style>
+
+  </head>
+
+
+
+  <body> 
+    <div id="section1">
+      <header>
+          <nav>
+              <div class="start">
+                  <p>
+                    Angular Learning
+                  </p>
+              </div>
+              <div class="start">
+                  <a href="viewEmp"><span>View Employee</span></a>
+                  <a href="list"><span>Employees</span></a>
+                  <a href="editEmp"><span>Edit Employee</span></a>
+                  <a href="EETD"><span>Edit Employee-Template</span></a>
+                  <a href="QI"><span>Quantity Increment</span></a>
+                  <a href="login"><span>Login</span></a>
+
+
+
+
+              </div>
+          </nav>
+      </header>
+  </div>
+<!--------------------------------------------------------------------------------------------------->
+<h1>Edit Employee</h1>
+<!-- <h2>Name</h2> -->
+<!-- <input type="text" [formControl]="name"> -->
+<div class="block">
+
+<form [formGroup]="empForm" (ngSubmit)="console()" autocomplete="off">
+<b>Name</b><br>
+<input type="text" formControlName="name"><br>
+<!-- <p *ngIf='name.errors?.required'  style="color: red;">Cannot be be empty</p>
+<p *ngIf='name.errors?.minlength' style="color: red;">Must be greater than 2 & 8 charahters</p> -->
+
+<b>Salary</b><br>
+<input type="number" formControlName="salary">
+<!-- <p *ngIf='salary.errors?.required'  style="color: red;">Cannot be be empty</p> -->
+<br>
+
+<b>Permanent</b><br>
+Yes<input type="radio" formControlName="permanent" [value]=true>
+No<input type="radio" formControlName="permanent" [value]=false><br>
+
+<b>Department</b><br>
+<select formControlName="department" >
+<option [value]="dept.name" *ngFor="let dept of departments" >{{dept.name}}</option>
+</select><br><br>
+
+<p><button class="btn btn-primary" type="submit" [disabled]="!empForm.valid">Submit</button></p>
+</form>
+</div>
+
+
+<!-- 
+<div class="block">
+  <strong>Employee Model</strong><br>
+  <pre>{{employee | json }}</pre>
+  </div>  
+
+
+<div class="block">
+  <strong>Angular Generated Form Model</strong><br>
+  <pre>{{empForm.value | json}}</pre>
+  </div> -->

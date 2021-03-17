@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>Menu-Edit</title>
+
+
+<!------------------------------------------------------------------>
+</head>
+<body>
+	<div id="section1">
+		<header>
+			<nav>
+				<div class="start">
+					<p>Movie Cruiser</p>
+					<i class='fas fa-film' style='font-size: 45px'></i>
+				</div>
+				<div class="start">
+					<a href="movie"><span>Main Page</span></a>
+				</div>
+			</nav>
+		</header>
+	</div>
+	<!----------------------------------------------------->
+	<div class="admin">
+		<h1>Edit Movie</h1>
+		<!-- <form method="post" onsubmit="myFun()">
+			<label for="itemedit"><b>Movie</b></label> <br> <br> <input
+				type="text" placeholder="Enter Item name" id="title" name="title" required="" [(ngModel)] = 'movie.title'>
+			<span id="iname-res"></span>
+			<div class="editform">
+				<div class="four-col">
+					<label for="price"><b>Box Office</b></label> <br> <br> <input
+						type="number" id="boxOffice" name="boxOffice" required="" [(ngModel)] = 'movie.boxOffice'> <span
+						id="pname-res"></span>
+				</div>
+
+				<div class="four-col">
+					<label for="activity"><b>Active</b></label> <br> <br> <input
+						type="radio" value="Yes" name="activity" id="activity" required="">Yes
+					<input type="radio" value="No" name="activity" id="activity"
+						required="">No
+				</div>
+			>
+				<div class="four-col">
+					<label for="Category"><b>Genre</b></label> <br> <br> 
+					<select name="genre" id="genre" required="" [(ngModel)] = 'movie.genre'>
+						<option value="Choose">Choose</option>
+						<option value="Science Friction">Science Friction</option>
+						<option value="Superhero">Superhero</option>
+						<option value="Romance">Romance</option>
+						<option value="Science Friction">Science Friction</option>
+						<option value="Superhero ">Superhero</option>
+					</select> <span id="cname-res"></span>
+				</div>
+
+			</div>
+			
+			<div class="freed">
+				<label for="activity"><b>Has Teaser</b></label> <br> <br>
+				<input type="radio" value="Yes" name="free" id="free" required="">Yes
+				<input type="radio" value="No" name="free" id="free" required="">No
+			</div>
+			<div>
+				<a><input type="submit" id="editsub" value="Save" (click) ="editHandler()"></a>
+			</div>
+		</form> -->
+
+		<form  (ngSubmit)="onSubmit()">
+	
+			<div class="row">
+			  </div>
+			  <div class="row">
+				<label class="form-control-label">Title</label> <input
+				  class="form-control" type="text" name="title" id="title" [(ngModel)] = 'movie.title'>
+			  </div>
+			  <div class="row">
+				<div class="col">
+				  <label class="form-control-label">Box Office</label> <input
+					type="number" class="form-control" name=boxOffice id="boxOffice" [(ngModel)] = 'movie.boxOffice'>
+				</div>
+				<div class="col">
+				  <label class="form-control-label">Active</label> <br>
+				  <div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="active"
+					  id="active" value="Yes"> <label
+					  class="form-check-label" for="inlineRadio1">Yes</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="active"
+					  id="active" value="No"> <label
+					  class="form-check-label" for="inlineRadio2">No</label>
+				  </div>
+				</div>
+				<div class="col">
+				  <label class="form-control-label">Genre</label> 
+				  <select class="form-control" [(ngModel)] = 'movie.genre' name="genre" id="genre">
+					<option value="Choose">Choose</option>
+						<option value="Science Friction">Science Friction</option>
+						<option value="Superhero">Superhero</option>
+						<option value="Romance">Romance</option>
+						<option value="Science Friction">Science Friction</option>
+						<option value="Superhero ">Superhero</option>
+				  </select>
+				</div>
+				<div class="col">
+				  <label class="form-control-label">Has Teaser</label> <br> <input
+					type="checkbox" value="Yes" name="hasTeaser" class="form-check-inline">Yes
+				  <input type="checkbox" value="No" name="hasTeaser"
+					class="form-check-inline">No
+					<br>
+					<br>     
+				</div>
+			   
+			  </div>
+			  <div class="row">
+			   
+				<input class="btn btn-primary" style="color: white;" value="Submit" type="submit" >
+			  </div>
+		  </form>
+	  
+
+	</div>
+
+	<!--------------------------------------------------------------------->
+		<div id="footer">
+		<footer>
+			<span>Copyright &#169; 2019</span>
+		</footer>
+	</div>
+</body>
+</html>

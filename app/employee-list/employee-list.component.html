@@ -1,0 +1,84 @@
+<htmL>
+    <head>
+  <style>
+    body{
+      margin: 0px;
+  }
+  nav{
+      background-color: #005b96;
+      color: #ffffff;
+      display: flex;
+      height: 60px;
+  }
+  .start{
+      width: 50%;
+      margin: auto;
+      font-family: inherit;
+      display: flex;
+  }
+  .start a{
+      color: white;
+      float: right;
+      font-size: 1em;
+      margin-left: 10px;
+      padding-right: 20px
+
+  }
+  .start p{
+      font-size: 24px;
+      padding-left: 10px;
+      margin: 0px;
+      padding-top: 10px;
+      padding-right: 20px
+  }
+  </style>
+  
+    </head>
+  
+  
+  
+    <body> 
+      <div id="section1">
+        <header>
+            <nav>
+                <div class="start">
+                    <p>
+                      Angular Learning
+                    </p>
+                </div>
+                <div class="start">
+                    <a href="viewEmp"><span>View Employee</span></a>
+                    <a href="list"><span>Employees</span></a>
+                    <a href="editEmp"><span>Edit Employee</span></a>
+                    <a href="EETD"><span>Edit Employee-Template</span></a>
+                    <a href="QI"><span>Quantity Increment</span></a>
+                    <a href="login"><span>Login</span></a>
+
+
+  
+  
+                </div>
+            </nav>
+        </header>
+    </div>
+    
+<!------------------------------------------------------------------------------------------------------->
+
+<h1>Employees List</h1>
+<form class="container">
+    <label>Search</label>
+    <input class="form-control" type="text" placeholder="Find by name" [(ngModel)]="searchKey" name="search" (keyup)="search()">
+</form>
+
+<!-- <div class="container">
+    <div class="row justify-content-left">
+        <div class="col-4 mx-lg-2 mb-lg-3 border border-info"  *ngFor="let employee of employeeList">
+            <div>{{employee.name}}</div>
+            <div>{{employee.salary | currency:'INR'}}</div>
+            <a [routerLink]="['/edit-reactive',employee.id]">Edit</a>
+        </div>
+    </div *ngFor="let employee of filteredEmployees">
+
+
+</div> -->
+<app-employee-info [employee]="filteredEmployees" ></app-employee-info>

@@ -1,0 +1,16 @@
+@import  '~bootstrap/dist/css/bootstrap.min.css';
+
+
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #A9A9A9;
+	height: 50px;
+}
+
+#footer span {
+	line-height: 50px;
+	padding-left: 30px;
+}

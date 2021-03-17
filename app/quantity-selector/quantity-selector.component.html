@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+<h1>Model Binding</h1>
+<input type="text" [value]="Quantity"/>
+<button (click)="addQty()" class="btn btn-primary">Add</button>
+<br><br><br>
+
+
+<h1>Quantity Selector</h1>
+<span *ngIf="color;else elseBlock">
+  <button type="button" (click)="minus()"><i class="fa fa-minus-circle" style="font-size:24px;color:gray;"></i></button></span>
+  
+<ng-template #elseBlock>
+    <button type="button" (click)="minus()"><i class="fa fa-minus-circle" style="font-size:24px;"></i></button>
+</ng-template>
+
+<input type="text" [value]="Qty"/>
+<button type="button" (click)="plus()"><i class="fa fa-plus-circle" style="font-size:24px;"></i>
+</button>
+</body>
+</html>

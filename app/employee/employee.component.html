@@ -1,0 +1,25 @@
+
+<h1>Employee details</h1>
+<p>ID:{{employee.id}}</p>
+<p>Name:{{employee.name}}</p>
+<p>Salary:{{employee.salary | currency:'INR'}}</p>
+<p *ngIf="employee.permanent;else elseBlock">
+    Yes</p>
+<ng-template #elseBlock>
+    <P>No</P>
+</ng-template>
+<p>Department Id:{{employee.department.Id}}</p>
+<p id=departmentName>Department Name:{{employee.department.name}}</p>
+<p>Skills</p>
+<table>
+    <tr>
+      <td>Skill Id</td>
+      <td>Skill Name</td>
+    </tr>
+    <tr>
+      <td><P *ngFor="let skill of employee.skill">{{skill.id}}</P> </td>
+      <td><P *ngFor="let skill of employee.skill">{{skill.name}}</P></td>
+    </tr>
+  </table>
+  <p>Date of Birth:{{employee.dateOfBirth|date:'mediumDate'}}</p>
+

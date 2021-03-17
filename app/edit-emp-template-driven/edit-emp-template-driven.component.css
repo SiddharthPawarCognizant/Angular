@@ -1,0 +1,12 @@
+@import  '~bootstrap/dist/css/bootstrap.min.css';
+
+.block {
+
+    float:left;
+    
+    width:33%
+    
+    }
+    .error{
+        color: red;
+    }

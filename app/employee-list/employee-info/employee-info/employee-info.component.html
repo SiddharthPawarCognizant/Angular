@@ -1,0 +1,15 @@
+
+<!------------------------------------------------------------------------------------------------------->
+
+
+
+
+<div class="container">
+    <div class="row justify-content-left">
+        <div class="col-4 mx-lg-2 mb-lg-3 border border-info" *ngFor="let emp of employee" >
+            <div>{{emp.name}}</div>
+            <div>{{emp.salary | currency:'INR'}}</div>
+            <a [routerLink]="['/reactive',emp.id]">Edit</a>
+        </div>
+    </div>
+</div>
