@@ -54,7 +54,7 @@ import { AuthMovieGuard } from './auth-movie.guard';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthMovieGuard,[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptorService,multi:true}]],//[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptorService,multi:true}]
+  providers: [AuthMovieGuard],//[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptorService,multi:true}]
   bootstrap: [AppComponent]
 })
 export class AppModule { }

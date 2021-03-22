@@ -36,7 +36,7 @@ const routes: Routes = [
 {path:'user',component:UserComponent},
 {path:'movie',component:MovieComponent,canActivate:[AuthMovieGuard]},//canActivate:[AuthGuard]
 {path:'editmovie/:id',component:EditMovieComponent},
-{path:'customer',component:CustomerListComponent,canActivate:[AuthMovieGuard]},
+{path:'customer',component:CustomerListComponent},
 {path:'fav',component:FavouriteComponent},
 {path:'loginmovie',component:LoginMovieComponent}
 
